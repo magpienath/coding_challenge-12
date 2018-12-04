@@ -4,24 +4,6 @@ const calculateFrequency = input =>
     return acc + frequency;
   }, 0)
 
-const firstRepeatFrequency = input => {
-  const hashMap = {0: true};
-  const stack = [0];
-  const answerQueue = [];
-  // could probably improve this to break out of loop as soon as answerQueue has one item pushed to it.
-  while (!answerQueue.length) {
-    input.forEach(item => {
-      let currentTotal = stack.pop() + item;
-      stack.push(currentTotal);
-      if (hashMap[currentTotal]) {
-        answerQueue.push(currentTotal);
-      } else {
-        hashMap[currentTotal] = true;
-      }
-    })
-  }
-  return answerQueue[0];
-}
 
 const input = [
 -19
